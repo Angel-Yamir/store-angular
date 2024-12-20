@@ -30,6 +30,8 @@ export class CounterComponent {
     if (duration && duration.currentValue !== duration.previousValue) {
       this.doSometing();
     }
+    console.log("change duration: ", this.duration)
+    console.log("change message: ", this.message)
   }
   ngOnInit(){
     // AFTER  RENDER
@@ -37,18 +39,27 @@ export class CounterComponent {
     console.log('onOnInit');
     console.log('duration => ', this.duration)
     console.log('message => ', this.message)
+    /*if (typeof window !== 'undefined') {
+      window.setInterval(() => {
+        console.log("set interval");
+        this.counter.update(statePrev => statePrev + 1);
+      }, 1000);
+    }*/
   }
   ngAfterViewInit(){
     // AFTER RENDER
     // para preguntar si los hijos de este componente ya fueron renderizados
     console.log('ngAfterViewInit')
-    /*this.counterRef = window.setInterval(()=>{
+    this.counterRef = window.setInterval(()=>{
       console.log('run interval')
       this.counter.update(statePrev => statePrev +1)
-    }, 1000)*/
+    }, 1000)
   }
   ngOnDestroy(){
     console.log('ngOnDestroy');
+    if(typeof window !== 'undefined'){
+      window.clearInterval(this.counterRef)
+    }
   }
   doSometing(){
     console.log('change duration');

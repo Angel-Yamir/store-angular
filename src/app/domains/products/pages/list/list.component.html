@@ -1,8 +1,18 @@
-<div class="grid grid-cols-3 gap-8">
+<!--<div class="grid grid-cols-3 gap-8">
     <app-product 
     *ngFor="let product of products()"
     [title]="product.title"
     [price]="product.price"
     [img]="product.image"
     (addToCart)="fromChild($event)"/>
+</div>-->
+<!--creamos un atributo mas generico llamado product el cual va a resivir todos los valores de producto en ves de estra asignando atributo por atributo. para que esto pueda recibir los valores, necesitamos modificar el list.component.ts-->
+<div class="container mx-auto">
+    <app-header></app-header>
+    <div class="grid grid-cols-4 gap-8">
+        <app-product 
+        *ngFor="let product of products()"
+        [product]="product"
+        (addToCart)="fromChild($event)"/>
+    </div>
 </div>
