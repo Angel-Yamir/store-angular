@@ -19,7 +19,7 @@ export class ListComponent {
   private cartService = inject(CartService);
   private productService = inject(ProductService);
 
-  ngOnChanges(){
+  ngOnInit(){
     this.productService.getProducts()
     .subscribe({
       next: (products) =>{
