@@ -18,6 +18,18 @@ export class ListComponent {
 
   private cartService = inject(CartService);
   private productService = inject(ProductService);
+
+  ngOnChanges(){
+    this.productService.getProducts()
+    .subscribe({
+      next: (products) =>{
+        this.products.set(products);
+      },
+      error: ()=>{
+
+      }
+    })
+  }
   //ya no necesitamos el constructor en esta caso porque ahora los datos los estamos trayendo de una API
   /*
   constructor(){
