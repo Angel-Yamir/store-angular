@@ -17,7 +17,19 @@ export class ListComponent {
   products = signal<Product[]>([]);//le indicamos que es una señal y que esa señal va a tener un interface, indicamos que Product es una lista y le damos como estado inicial un array vacío; tambien se podrían colocar de forma directa en este array
 
   private cartService = inject(CartService);
-  private productService = inject(ProductService)
+  private productService = inject(ProductService);
+
+  ngOnInit(){
+    this.productService.getProducts()
+    .subscribe({
+      next: (products)=>{
+        this.products.set(products);
+      },
+      error: ()=>{
+
+      }
+    })
+  }
   //ya no necesitamos el constructor en esta caso porque ahora los datos los estamos trayendo de una API
   /*
   constructor(){
