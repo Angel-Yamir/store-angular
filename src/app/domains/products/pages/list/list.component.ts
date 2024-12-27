@@ -22,7 +22,7 @@ export class ListComponent {
   ngOnInit(){
     this.productService.getProducts()
     .subscribe({
-      next: (products)=>{
+      next: (products) =>{
         this.products.set(products);
       },
       error: ()=>{
@@ -73,8 +73,7 @@ export class ListComponent {
     this.products.set(initProducts);
   }
   */
-  fromChild(product: Product){
-    console.log("este es un log")
-    this.cartService.addToCart(product)
+  addToCart(product: Product){
+    this.cartService.addToCart(product);
   }
 }
