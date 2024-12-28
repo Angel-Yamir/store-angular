@@ -1,10 +1,7 @@
-<div class="container mx-auto">
-    <app-header></app-header>
-    <div>
-        <input type="number" [value]="duration()" (change)="changeDuration($event)">
+<div>
+    <input type="number" [value]="duration()" (change)="changeDuration($event)">
 
-        <input type="text" [value]="message()" (change)="changeMessage($event)">
+    <input type="text" [value]="message()" (change)="changeMessage($event)">
 
-        <app-counter  [duration]="duration()" [message]="message()" *ngIf="duration() > 0"/>
-    </div>
+    <app-counter  [duration]="duration()" [message]="message()" *ngIf="duration() > 0"/>
 </div>
