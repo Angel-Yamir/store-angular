@@ -1,12 +1,13 @@
 import { Component, Input, Output } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { EventEmitter } from '@angular/core';
-import { Product } from "./../../../shared/models/product.model";
+import { Product } from "@shared/models/product.model";
+import { TimeAgoPipe } from "@shared/pipes/time-ago.pipe";
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TimeAgoPipe],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
