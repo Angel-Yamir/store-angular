@@ -14,9 +14,11 @@
           >
         </a>
         <ul class="flex space-x-6">
-          <li>
+          <li><!--el routerLinkActivate detecta que cuando el usuario este en esa direccion se va activar la el estilo correspondiente. el routerLinkActiveOptions se usa para que se haga mash directo-->
             <a
               routerLink="/"
+              routerLinkActive="underline"
+              [routerLinkActiveOptions]="{exact: true}"
               class="block underline hover:underline"
               aria-current="page"
               >Home</a
@@ -25,6 +27,7 @@
           <li>
             <a
               routerLink="/about"
+              routerLinkActive="underline"
               class="block hover:underline"
               >About</a
             >
@@ -32,6 +35,7 @@
           <li>
             <a
               routerLink="/services"
+              routerLinkActive="underline"
               class="block hover:underline"
               >Services</a
             >
