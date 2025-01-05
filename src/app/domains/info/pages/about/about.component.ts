@@ -10,7 +10,8 @@ import { HeaderComponent } from "@shared/components/header/header.component";
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent {
+//se agrega el dafault para indicar que automaticamente tiene que resolvero(exportar este componente) y así nos ahorramos el .then (en la tecnica de lazyLoading)
+export default class AboutComponent {
   duration = signal(1000);
   message = signal('Hola');
 

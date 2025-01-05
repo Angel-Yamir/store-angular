@@ -15,7 +15,8 @@ import { Category } from '@shared/models/category.model';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
-export class ListComponent {
+//se agrega el dafault para indicar que automaticamente tiene que resolvero(exportar este componente) y así nos ahorramos el .then (en la tecnica de lazyLoading) 
+export default class ListComponent {
   products = signal<Product[]>([]);//le indicamos que es una señal y que esa señal va a tener un interface, indicamos que Product es una lista y le damos como estado inicial un array vacío; tambien se podrían colocar de forma directa en este array
   categories = signal<Category[]>([]);
 
