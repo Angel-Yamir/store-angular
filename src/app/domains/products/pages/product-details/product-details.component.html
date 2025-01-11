@@ -38,3 +38,15 @@
     </button>
   </div>
 </div>
+
+<!-- esta seccion es para mostrar productos que pertenezcan a la misma categoria del producto seleccionado; estos productos seran mostrados de forma aleatoria. solo se seleccionaran cuatro productos-->
+
+<section>
+  <div class="grid grid-cols-4 gap-8">
+    @for (product of productsSelect(); track product) {
+      <app-product
+        [product]="product"
+        />
+    }
+  </div>
+</section>
