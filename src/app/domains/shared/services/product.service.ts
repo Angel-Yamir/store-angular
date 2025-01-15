@@ -16,6 +16,9 @@ export class ProductService {
     }
     return this.http.get<Product[]>(url.toString());
   }
+  getCategory(category_string: string){
+    return this.http.get<Product[]>(`https://api.escuelajs.co/api/v1/categories/${category_string}`); 
+  }
 
   getOne(id: String){
     return this.http.get<Product>(`https://api.escuelajs.co/api/v1/products/${id}`);
