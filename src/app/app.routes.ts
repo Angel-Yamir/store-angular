@@ -39,10 +39,6 @@ export const routes: Routes = [
                 loadComponent: ()=> import('./domains/products/categories/electronics/electronics.component')
             },
             {
-                path: 'laptops',
-                loadComponent: ()=> import('./domains/products/categories/laptops/laptops.component')
-            },
-            {
                 path: 'miscellaneous',
                 loadComponent: ()=> import('./domains/products/categories/miscellaneous/miscellaneous.component')
             },

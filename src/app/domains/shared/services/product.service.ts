@@ -4,7 +4,7 @@ import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class ProductService {
   private http = inject(HttpClient);
   constructor() { }
@@ -16,11 +16,11 @@ export class ProductService {
     }
     return this.http.get<Product[]>(url.toString());
   }
-  getCategory(category_string: string){
+  getCategory(category_string: String){
     return this.http.get<Product[]>(`https://api.escuelajs.co/api/v1/categories/${category_string}`); 
   }
 
   getOne(id: String){
-    return this.http.get<Product>(`https://api.escuelajs.co/api/v1/products/${id}`);
+    return this.http.get<Product>(`https://api.escuelajs.co/api/v1/categories/${id}`);
   }
 }

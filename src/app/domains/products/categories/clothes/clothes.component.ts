@@ -48,7 +48,7 @@ export default class ClothesComponent {
     })
   }  
   private getProductsCategory(){
-    this.productService.getCategory("clothes")//enviamos a category_id en caso de que sufra alguna modificacion(puede que se ejecute esta funcin pero no se envia practicamente nada en category_id)
+    this.productService.getProducts("1")//enviamos a category_id en caso de que sufra alguna modificacion(puede que se ejecute esta funcin pero no se envia practicamente nada en category_id)
     .subscribe({
       next: (products) =>{
         this.productsCategories.set(products);

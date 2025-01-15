@@ -11,7 +11,7 @@ import { CartService } from '@shared/services/cart.service';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
-export class ProductDetailsComponent {  
+export class ProductDetailsComponent {      
   //para que los parametros de las rutas puedan llegar como inputs hay que hacer una configuracion en el app.config.ts
   @Input() id?: string;
   product = signal<Product | null>(null);
