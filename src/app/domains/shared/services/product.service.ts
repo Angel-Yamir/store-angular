@@ -21,6 +21,6 @@ export class ProductService {
   }
 
   getOne(id: String){
-    return this.http.get<Product>(`https://api.escuelajs.co/api/v1/categories/${id}`);
+    return this.http.get<Product>(`https://api.escuelajs.co/api/v1/products/${id}`);
   }
 }

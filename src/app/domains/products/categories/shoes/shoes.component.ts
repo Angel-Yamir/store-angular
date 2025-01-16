@@ -1,13 +1,14 @@
 import { Component, inject, signal } from '@angular/core';
 import { Product } from '@shared/models/product.model';
 import { ProductComponent } from "@products/components/product/product.component";
+import { FilteredProductComponent } from "./../../components/filtered-product/filtered-product.component";
 import { CartService } from '@shared/services/cart.service';
 import { ProductService } from '@shared/services/product.service';
 
 @Component({
   selector: 'app-shoes',
   standalone: true,
-  imports: [ProductComponent],
+  imports: [ProductComponent, FilteredProductComponent],
   templateUrl: './shoes.component.html',
   styleUrl: './shoes.component.css'
 })

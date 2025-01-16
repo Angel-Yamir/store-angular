@@ -4,7 +4,7 @@
     </div>
     <div>
         @for (product of productsByPrice(); track product) {
-            <app-product
+            <app-filtered-product
               [product]="product"/>
         }
     </div>
