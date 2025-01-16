@@ -2,12 +2,13 @@ import { Component, inject, signal } from '@angular/core';
 import { Product } from '@shared/models/product.model';
 import { ProductService } from '@shared/services/product.service';
 import { ProductComponent } from "./../../components/product/product.component";
+import { FilteredProductComponent } from "./../../components/filtered-product/filtered-product.component";
 import { CartService } from "@shared/services/cart.service";
 
 @Component({
   selector: 'app-clothes',
   standalone: true,
-  imports: [ProductComponent],
+  imports: [ProductComponent, FilteredProductComponent],
   templateUrl: './clothes.component.html',
   styleUrl: './clothes.component.css'
 })
@@ -39,13 +40,14 @@ export default class ClothesComponent {
         for(let randomId of acumuladorRandoms){
           selectedProducts.push(products[randomId]);//se selecciona este producto de esta forma ya que estamos tomando un numero alaetorio de la lista(no del id de cada elemento, si no de la enumeracion de la lista)
         }
-        this.productsCategories.set(selectedProducts);
-        
+        this.generalProducts.set(selectedProducts);
+        console.log("este es el tamaño 1: ", this.productsCategories.length);
       },
       error: ()=>{
 
       }
     })
+    console.log("este es el tamaño 1: ", this.productsCategories.length);
   }  
   private getProductsCategory(){
     this.productService.getProducts("1")//enviamos a category_id en caso de que sufra alguna modificacion(puede que se ejecute esta funcin pero no se envia practicamente nada en category_id)
