@@ -19,6 +19,7 @@ export default class ElectronicsComponent {
   productsCategories = signal<Product[]>([]);
   ngOnInit(){
     this.getByPrice();  
+    console.log("ng on init");
     this.getProductsCategory();  
   }
   addToCart(product: Product){
@@ -29,7 +30,7 @@ export default class ElectronicsComponent {
     .subscribe({
       next: (products) =>{
         this.productsCategories.set(products);
-        console.log("este es el tamaño 1: ", this.productsCategories.length);
+        console.log("este es el tamaño: ", this.productsCategories.length);
       },
       error: ()=>{
 
@@ -37,20 +38,19 @@ export default class ElectronicsComponent {
     })
   }  
   private getByPrice(){
-    this.productService.getProducts("5")//enviamos a category_id en caso de que sufra alguna modificacion(puede que se ejecute esta funcin pero no se envia practicamente nada en category_id)
+    this.productService.getProducts("2")//enviamos a category_id en caso de que sufra alguna modificacion(puede que se ejecute esta funcin pero no se envia practicamente nada en category_id)
     .subscribe({
       next: (products) =>{
         const selectedProducts=[];
         const addition = products.reduce((total, product)=> total + product.price, 0);
         const average = addition/products.length;
         for(let product of products){
-          if(selectedProducts.length < 8){
+          console.log("listo");
+          if(selectedProducts.length < 4){
             if(product.price < average){
               selectedProducts.push(product);
-              console.log("se agrego");
             }        
           }
-         console.log("-------------", products.length);
         }
         this.productsByPrice.set(selectedProducts);
       },

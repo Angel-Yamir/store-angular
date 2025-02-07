@@ -49,7 +49,11 @@ export const routes: Routes = [
             {
                 path: 'product/:id',
                 component: ProductDetailsComponent
-            }
+            },
+            {
+                path: 'shopping-cart',
+                loadComponent: ()=> import('./domains/products/pages/shopping-cart/shopping-cart.component')
+            },
         ]
     },
     {

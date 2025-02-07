@@ -37,14 +37,14 @@ export default class ShoesComponent {
     })
   }  
   private getByPrice(){
-    this.productService.getProducts("5")//enviamos a category_id en caso de que sufra alguna modificacion(puede que se ejecute esta funcin pero no se envia practicamente nada en category_id)
+    this.productService.getProducts("4")//enviamos a category_id en caso de que sufra alguna modificacion(puede que se ejecute esta funcin pero no se envia practicamente nada en category_id)
     .subscribe({
       next: (products) =>{
         const selectedProducts=[];
         const addition = products.reduce((total, product)=> total + product.price, 0);
         const average = addition/products.length;
         for(let product of products){
-          if(selectedProducts.length < 8){
+          if(selectedProducts.length < 4){
             if(product.price < average){
               selectedProducts.push(product);
               console.log("se agrego");

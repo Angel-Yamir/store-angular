@@ -45,7 +45,7 @@ export default class MiscellaneousComponent {
         const addition = products.reduce((total, product)=> total + product.price, 0);
         const average = addition/products.length;
         for(let product of products){
-          if(selectedProducts.length < 8){
+          if(selectedProducts.length < 5){
             if(product.price < average){
               selectedProducts.push(product);
               console.log("se agrego");

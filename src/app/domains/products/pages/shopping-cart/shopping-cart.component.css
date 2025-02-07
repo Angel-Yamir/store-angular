@@ -1,0 +1,26 @@
+.acciones-carrito {
+  display: flex;               /* Utilizamos flexbox para alinearlos horizontalmente */
+  justify-content: flex-end;   /* Los elementos se colocan al final */
+  gap: 10px;                   /* Espacio entre los elementos */
+  align-items: center;         /* Alineación vertical centrada */
+  position: absolute;          /* Fija el contenedor en la parte inferior */
+  bottom: 23px;                /* Separación de 10px desde el borde inferior del contenedor */
+  left: 10px;                  /* Separación de 10px desde el borde izquierdo del contenedor (ajustar si prefieres a la derecha) */
+  right: 17px;                 /* Esto asegura que se mantenga 10px desde el borde derecho, si es necesario */
+}
+
+.principal {
+  position: relative;
+    
+}
+.mensaje-pre-compra{
+  margin: 15px;
+}
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.boton-pago{
+  margin-top: 10px;
+}

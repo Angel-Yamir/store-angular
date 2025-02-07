@@ -18,7 +18,6 @@ export class HeaderComponent {
   //precioTotalAPagar=signal(0);
   private cartService = inject(CartService);
   cart = this.cartService.cart;
-  precioTotalAPagar = this.cartService.total;
   toogleSideMenu(){//para mostra y no mostrar el carrito de compras
     this.hideSideMenu.update(prevState => !prevState);
   }
