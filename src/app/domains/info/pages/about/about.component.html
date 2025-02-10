@@ -1,9 +1,0 @@
-<div>
-  <input type="number" [value]="duration()" (change)="changeDuration($event)">
-
-  <input type="text" [value]="message()" (change)="changeMessage($event)">
-
-  @if (duration() > 0) {
-    <app-counter  [duration]="duration()" [message]="message()"/>
-  }
-</div>
