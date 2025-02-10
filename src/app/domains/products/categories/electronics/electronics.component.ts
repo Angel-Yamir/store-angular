@@ -46,7 +46,7 @@ export default class ElectronicsComponent {
         const average = addition/products.length;
         for(let product of products){
           console.log("listo");
-          if(selectedProducts.length < 4){
+          if(selectedProducts.length < 5){
             if(product.price < average){
               selectedProducts.push(product);
             }        

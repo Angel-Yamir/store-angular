@@ -31,7 +31,7 @@ export default class ClothesComponent {
         /* Lo que se hace aquí es que los datos se van a traer pero de forma controlada. antes de ser agregados a selectedProducts estos seran datos obtenidos por su id de forma aleatoria, estos solo seran cuatro y se emplea una logica para asegurarse de que no se agregue ningun dato repetido*/
         let selectedProducts = [];//acumulador de resultados finales
         const acumuladorRandoms:number[] = [];
-        while(acumuladorRandoms.length < 4){
+        while(acumuladorRandoms.length < 5){
           let random = Math.floor(Math.random() * (products.length - 1 + 1)) + 1;
           if(!acumuladorRandoms.includes(random)){
             acumuladorRandoms.push(random);

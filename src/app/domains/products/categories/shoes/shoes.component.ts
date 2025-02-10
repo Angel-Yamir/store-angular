@@ -44,7 +44,7 @@ export default class ShoesComponent {
         const addition = products.reduce((total, product)=> total + product.price, 0);
         const average = addition/products.length;
         for(let product of products){
-          if(selectedProducts.length < 4){
+          if(selectedProducts.length < 5){
             if(product.price < average){
               selectedProducts.push(product);
               console.log("se agrego");

@@ -13,6 +13,9 @@
   position: relative;
     
 }
+.there-are-not-products{
+  font-size: 2rem;
+}
 .mensaje-pre-compra{
   margin: 15px;
 }
