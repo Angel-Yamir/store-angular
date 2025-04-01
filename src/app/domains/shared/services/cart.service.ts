@@ -12,7 +12,7 @@ export class CartService {
     return cart.reduce((total, product)=> total + (product.producto.price * product.cantidad), 0);
   })
   constructor() { }
-  
+
   quantityOfProducts = computed(()=>{
     const cart = this.cart();
     return cart.reduce((quantity, product)=> quantity + product.cantidad, 0);

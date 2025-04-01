@@ -1,3 +1,6 @@
+// este es el componente que que se muestra cuando se dan los detalles del componente
+
+
 import { Component, EventEmitter, inject, Input, Output, signal } from '@angular/core';
 import { Product } from '@shared/models/product.model';
 import { ProductService } from '@shared/services/product.service';
@@ -19,6 +22,7 @@ export class ProductDetailsComponent {
   private productSercive = inject(ProductService);
   private cartService = inject(CartService);
 
+  // ya que accedimos por medio de la imagen (desde list) de un producto a los detalles de este por medio del @Input traemos al id, de esa forma podemos por medio del ngOnInit (que se ejecuta al iniciar la aplacion) traemos por medio del prodcut service la informacion de ese producto 
   ngOnInit(){
     if(this.id){
       this.productSercive.getOne(this.id)

@@ -1,3 +1,7 @@
+// este header es el que se muestra en toda la aplicaion, no se carga con cada cambio de pestaña si no que ya está fijo, esto se logra por la forma en que se ordeno desde el app.routes.ts
+
+
+
 import { Component, inject, Input, signal, SimpleChanges } from '@angular/core';
 import { CommonModule } from "@angular/common";
 //import { Product } from '../../models/product.model';

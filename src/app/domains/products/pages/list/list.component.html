@@ -1,3 +1,10 @@
+<!-- 
+ el codigo comentado hace lo mismo que el que atualmente se está ejecutando, la diferecia es que es mas mecanico y por algunas razones un poco menos efectivo en el rendimiento.
+ Este es el componente en el que se estan mostrando o juntando todos los elementos (es deigamos la pantalla principal)
+-->
+
+
+
 <!--<div class="grid grid-cols-3 gap-8">
 <app-product
   *ngFor="let product of products()"
@@ -24,9 +31,13 @@
   </div>
   -->
   <div class="grid grid-cols-4 gap-8">
-    @for (product of products(); track product) {
+    @for (product of products(); track product) { <!-- lo que hace es iterar todos los elemtos de products() y por cada elemento que products() contenga va a crear un app-product (que es la estructura de cada producto)-->
+
+      <!-- [product]="product"      esta linea le envia a product sus valores titulo, precio                          e imagen
+           (addToCart)="addToCart($event)"       agrega el metodo de agregar al carrito y le envia la informacion  del producto a agregar por medio del $event
+      -->
       <app-product
-        [product]="product"
+        [product]="product" 
         (addToCart)="addToCart($event)"/>
     }
   </div>
